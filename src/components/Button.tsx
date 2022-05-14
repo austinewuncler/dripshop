@@ -6,7 +6,7 @@ const Button = ({ children, type, onClick, isGoogle }: ButtonProps) => (
   <button
     className={`${
       isGoogle ? 'google-sign-in' : ''
-    } w-auto font-bold uppercase button`}
+    } w-auto font-bold uppercase button h-12 py-0 px-9`}
     type={type === 'submit' ? 'submit' : 'button'}
     onClick={onClick}
   >

@@ -4,7 +4,7 @@ import SignInForm from '../components/SignInForm';
 import SignUpForm from '../components/SignUpForm';
 
 const AuthPage = () => (
-  <div className="flex justify-between auth-page">
+  <div className="flex justify-between mx-auto auth-page">
     <SignInForm />
     <SignUpForm />
   </div>

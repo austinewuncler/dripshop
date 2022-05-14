@@ -9,9 +9,11 @@ import FormInputField from './FormInputField';
 const initialValues = { email: '', password: '' };
 
 const SignInForm = () => (
-  <div className="flex flex-col auth">
-    <h2>I already have an account</h2>
-    <span>Sign in with your email and password</span>
+  <div className="flex flex-col w-96 gap-11">
+    <div>
+      <h2>I already have an account</h2>
+      <span>Sign in with your email and password</span>
+    </div>
     <Formik
       initialValues={initialValues}
       onSubmit={async ({ email, password }, { resetForm }) => {
@@ -22,7 +24,7 @@ const SignInForm = () => (
         }
       }}
     >
-      <Form>
+      <Form className="flex flex-col gap-11">
         <FormInputField type="email" name="email" label="Email" required />
         <FormInputField
           type="password"

@@ -2,8 +2,6 @@
 
 .button {
   min-width: 165px;
-  height: 50px;
-  padding: 0 35px;
   color: $color-bg;
   font-size: 15px;
   line-height: 50px;
@@ -12,7 +10,7 @@
 
   &:hover {
     color: $color-main;
-    background-color: #fff !important;
+    background-color: $color-bg !important;
     border: 1px solid $color-main;
   }
 

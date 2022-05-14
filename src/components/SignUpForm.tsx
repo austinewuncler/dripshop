@@ -14,10 +14,12 @@ const initialValues = {
   confirmPassword: '',
 };
 
-const SignInForm = () => (
-  <div className="flex flex-col auth">
-    <h2>I do not have an account</h2>
-    <span>Sign up with your email and password</span>
+const SignUpForm = () => (
+  <div className="flex flex-col w-96 gap-11">
+    <div>
+      <h2>I do not have an account</h2>
+      <span>Sign up with your email and password</span>
+    </div>
     <Formik
       initialValues={initialValues}
       onSubmit={async ({ displayName, email, password }, { resetForm }) => {
@@ -34,7 +36,7 @@ const SignInForm = () => (
         }
       }}
     >
-      <Form>
+      <Form className="flex flex-col gap-11">
         <FormInputField
           type="text"
           name="displayName"
@@ -60,4 +62,4 @@ const SignInForm = () => (
   </div>
 );
 
-export default SignInForm;
+export default SignUpForm;

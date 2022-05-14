@@ -8,21 +8,21 @@ import { auth } from '../firebase/auth';
 type HeaderProps = { currentUser: any };
 
 const Header = ({ currentUser }: HeaderProps) => (
-  <header className="flex justify-between w-full header">
-    <Link className="h-full logo" to="/">
+  <header className="flex items-center justify-between w-full h-16">
+    <Link to="/">
       <Logo />
     </Link>
-    <nav className="flex items-center justify-end w-1/2 h-full">
-      <Link className="nav-item py-2.5 uppercase" to="/shop">
+    <nav className="flex items-center justify-end gap-7">
+      <Link className="uppercase" to="/shop">
         Shop
       </Link>
-      <Link className="nav-item py-2.5 uppercase" to="/contact">
+      <Link className="uppercase" to="/contact">
         Contact
       </Link>
       {currentUser ? (
         <div
           role="button"
-          className="nav-item py-2.5 uppercase cursor-pointer"
+          className="uppercase cursor-pointer"
           onClick={() => signOut(auth)}
           onKeyDown={() => {}}
           tabIndex={0}
@@ -30,7 +30,7 @@ const Header = ({ currentUser }: HeaderProps) => (
           Sign Out
         </div>
       ) : (
-        <Link className="nav-item py-2.5 uppercase" to="/auth">
+        <Link className="uppercase" to="/auth">
           Sign In
         </Link>
       )}

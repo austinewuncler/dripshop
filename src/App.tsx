@@ -32,14 +32,14 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col gap-24">
       <Header currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/auth" element={<AuthPage />} />
       </Routes>
-    </>
+    </div>
   );
 };
 

@@ -1,13 +1,9 @@
 .collection {
-  margin-bottom: 30px;
-
   &-item {
     width: 22%;
-    height: 350px;
 
     .image {
       height: 95%;
-      margin-bottom: 5px;
     }
 
     .footer {
@@ -16,7 +12,6 @@
 
       .name {
         width: 90%;
-        margin-bottom: 15px;
       }
 
       .price {
@@ -26,7 +21,6 @@
   }
 
   .title {
-    margin-bottom: 25px;
     font-size: 28px;
   }
 }
