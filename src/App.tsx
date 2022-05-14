@@ -1,5 +1,13 @@
+import './scss/main.scss';
+
 import React from 'react';
 
-const App = () => <div>App</div>;
+import HomePage from './pages/HomePage';
+
+const App = () => (
+  <div>
+    <HomePage />
+  </div>
+);
 
 export default App;
