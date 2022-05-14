@@ -8,16 +8,16 @@ import FormInputField from './FormInputField';
 const initialValues = { email: '', password: '' };
 
 const SignInForm = () => (
-  <div className="flex flex-col sign-in">
+  <div className="flex flex-col auth">
     <h2>I already have an account</h2>
     <span>Sign in with your email and password</span>
     <Formik initialValues={initialValues} onSubmit={() => {}}>
       <Form>
-        <FormInputField type="email" name="email" label="email" required />
+        <FormInputField type="email" name="email" label="Email" required />
         <FormInputField
           type="password"
           name="password"
-          label="password"
+          label="Password"
           required
         />
         <div className="flex justify-between">

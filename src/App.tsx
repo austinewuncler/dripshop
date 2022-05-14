@@ -8,9 +8,9 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import { auth } from './firebase/auth';
 import saveUserProfile from './firebase/database';
+import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
-import SignInPage from './pages/SignInPage';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState<
@@ -37,7 +37,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
-        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
     </>
   );

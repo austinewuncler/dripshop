@@ -30,7 +30,7 @@ const Header = ({ currentUser }: HeaderProps) => (
           Sign Out
         </div>
       ) : (
-        <Link className="nav-item py-2.5 uppercase" to="/signin">
+        <Link className="nav-item py-2.5 uppercase" to="/auth">
           Sign In
         </Link>
       )}
