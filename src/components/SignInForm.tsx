@@ -1,6 +1,7 @@
 import { Form, Formik } from 'formik';
 import React from 'react';
 
+import Button from './Button';
 import FormInputField from './FormInputField';
 
 const initialValues = { email: '', password: '' };
@@ -18,7 +19,7 @@ const SignInForm = () => (
           label="password"
           required
         />
-        <button type="submit">Sign In</button>
+        <Button type="submit">Sign In</Button>
       </Form>
     </Formik>
   </div>
