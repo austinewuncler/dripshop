@@ -1,6 +1,7 @@
 import { Form, Formik } from 'formik';
 import React from 'react';
 
+import signInWithGoogle from '../firebase/auth';
 import Button from './Button';
 import FormInputField from './FormInputField';
 
@@ -20,6 +21,7 @@ const SignInForm = () => (
           required
         />
         <Button type="submit">Sign In</Button>
+        <Button onClick={signInWithGoogle}>Sign In With Google</Button>
       </Form>
     </Formik>
   </div>
