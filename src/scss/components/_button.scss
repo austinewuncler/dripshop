@@ -15,4 +15,14 @@
     background-color: #fff !important;
     border: 1px solid $color-main;
   }
+
+  &.google-sign-in {
+    color: $color-bg;
+    background-color: $color-google !important;
+
+    &:hover {
+      background-color: $color-google-dark !important;
+      border: none;
+    }
+  }
 }

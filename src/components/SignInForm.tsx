@@ -20,8 +20,12 @@ const SignInForm = () => (
           label="password"
           required
         />
-        <Button type="submit">Sign In</Button>
-        <Button onClick={signInWithGoogle}>Sign In With Google</Button>
+        <div className="flex justify-between">
+          <Button type="submit">Sign In</Button>
+          <Button onClick={signInWithGoogle} isGoogle>
+            Sign In With Google
+          </Button>
+        </div>
       </Form>
     </Formik>
   </div>

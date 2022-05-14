@@ -1,9 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../assets/crown.svg';
+import { auth } from '../firebase/auth';
 
-const Header = () => (
+type HeaderProps = { currentUser: any };
+
+const Header = ({ currentUser }: HeaderProps) => (
   <header className="flex justify-between w-full header">
     <Link className="h-full logo" to="/">
       <Logo />
@@ -15,6 +19,21 @@ const Header = () => (
       <Link className="nav-item py-2.5 uppercase" to="/contact">
         Contact
       </Link>
+      {currentUser ? (
+        <div
+          role="button"
+          className="nav-item py-2.5 uppercase cursor-pointer"
+          onClick={() => signOut(auth)}
+          onKeyDown={() => {}}
+          tabIndex={0}
+        >
+          Sign Out
+        </div>
+      ) : (
+        <Link className="nav-item py-2.5 uppercase" to="/signin">
+          Sign In
+        </Link>
+      )}
     </nav>
   </header>
 );

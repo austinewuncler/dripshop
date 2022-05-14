@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
