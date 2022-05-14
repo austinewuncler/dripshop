@@ -5,8 +5,7 @@ import app from './app';
 
 const firestore = getFirestore(app);
 
-const saveUserProfile = async (user: User | null, additionalData?: any) => {
-  if (!user) return;
+const saveUserProfile = async (user: User, additionalData?: any) => {
   const userRef = doc(firestore, 'users', user.uid);
   const userSnapshot = await getDoc(userRef);
   if (!userSnapshot.exists()) {
@@ -20,9 +19,10 @@ const saveUserProfile = async (user: User | null, additionalData?: any) => {
         ...additionalData,
       });
     } catch (err: any) {
-      console.log(err);
+      throw new Error(err.message);
     }
   }
+  return userRef;
 };
 
 export default saveUserProfile;

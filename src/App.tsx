@@ -1,6 +1,7 @@
 import './scss/main.scss';
 
 import { onAuthStateChanged } from 'firebase/auth';
+import { DocumentData, onSnapshot } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -12,11 +13,18 @@ import ShopPage from './pages/ShopPage';
 import SignInPage from './pages/SignInPage';
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [currentUser, setCurrentUser] = useState<
+    { id: string } | DocumentData | null
+  >(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      saveUserProfile(user);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const userRef = await saveUserProfile(user);
+        onSnapshot(userRef, (snapshot) => {
+          setCurrentUser({ id: snapshot.id, ...snapshot.data() });
+        });
+      }
       setCurrentUser(user);
     });
 
