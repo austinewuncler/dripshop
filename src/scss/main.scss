@@ -1,5 +1,7 @@
 @use './base/typography';
 
-@use './layout/collection';
-@use './layout/directory';
-@use './layout/header';
+@use './components/collection';
+@use './components/directory';
+@use './components/forms';
+@use './components/header';
+@use './components/sign-in';

@@ -1,0 +1,7 @@
+@use './variables' as variables;
+
+@mixin shrink-label {
+  top: -14px;
+  color: variables.$color-main;
+  font-size: 12px;
+}
