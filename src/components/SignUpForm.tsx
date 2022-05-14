@@ -20,7 +20,7 @@ const SignInForm = () => (
     <span>Sign up with your email and password</span>
     <Formik
       initialValues={initialValues}
-      onSubmit={async ({ displayName, email, password }) => {
+      onSubmit={async ({ displayName, email, password }, { resetForm }) => {
         try {
           const { user } = await createUserWithEmailAndPassword(
             auth,
@@ -30,6 +30,7 @@ const SignInForm = () => (
           await saveUserProfile(user, { displayName });
         } catch (error: any) {
           throw new Error(error.message);
+          resetForm({ values: initialValues });
         }
       }}
     >
