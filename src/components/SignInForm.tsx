@@ -1,7 +1,7 @@
 import { Form, Formik } from 'formik';
 import React from 'react';
 
-import signInWithGoogle from '../firebase/auth';
+import { signInWithGoogle } from '../firebase/auth';
 import Button from './Button';
 import FormInputField from './FormInputField';
 
