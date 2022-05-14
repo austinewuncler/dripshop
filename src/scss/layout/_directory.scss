@@ -1,7 +1,11 @@
-.grid-item {
+.directory-item {
   min-width: 30%;
   margin: 0 7.5px 15px;
   border: 1px solid #000;
+
+  &.large {
+    height: 380px;
+  }
 
   .content {
     height: 90px;
