@@ -1,6 +1,6 @@
 import React from 'react';
 
-import directoryItems from '../directory-items';
+import directoryItems from '../directory.items';
 import DirectoryItem from './DirectoryItem';
 
 const Directory = () => (
