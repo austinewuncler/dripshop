@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header';
 import { auth } from './firebase/auth';
+import saveUserProfile from './firebase/database';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import SignInPage from './pages/SignInPage';
@@ -15,11 +16,12 @@ const App = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      saveUserProfile(user);
       setCurrentUser(user);
     });
 
     return () => unsubscribe();
-  }, [currentUser]);
+  }, []);
 
   return (
     <>
