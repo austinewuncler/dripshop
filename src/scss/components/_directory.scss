@@ -1,7 +1,9 @@
+@use '../abstracts/variables' as *;
+
 .directory-item {
   min-width: 30%;
   margin: 0 7.5px 15px;
-  border: 1px solid #000;
+  border: 1px solid $color-main;
 
   &.large {
     height: 380px;
@@ -17,7 +19,7 @@
   .content {
     height: 90px;
     padding: 0 25px;
-    border: 1px solid #000;
+    border: 1px solid $color-main;
 
     .title {
       color: #4a4a4a;

@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as variables;
-@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .form-input-field {
   margin: 45px 0;
@@ -7,29 +7,29 @@
   .label {
     top: 10px;
     left: 5px;
-    color: variables.$color-sub;
+    color: $color-sub;
     font-size: 16px;
     transition: 300ms ease all;
 
     &.shrink {
-      @include mixins.shrink-label;
+      @include shrink-label;
     }
   }
 
   .input {
     margin: 25px 0;
     padding: 10px 10px 10px 5px;
-    color: variables.$color-sub;
+    color: $color-sub;
     font-size: 18px;
     background: none;
-    border-bottom: 1px solid variables.$color-sub;
+    border-bottom: 1px solid $color-sub;
 
     &:focus {
       outline: none;
     }
 
     &:focus ~ .label {
-      @include mixins.shrink-label;
+      @include shrink-label;
     }
   }
 
