@@ -1,0 +1,6 @@
+@use '../abstracts/variables' as *;
+
+.cart-dropdown {
+  background-color: $color-bg;
+  border: 1px solid $color-main;
+}

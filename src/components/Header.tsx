@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import Logo from '../assets/crown.svg';
 import { auth } from '../firebase/auth';
+import CartDropdown from './CartDropdown';
 import CartIcon from './CartIcon';
 
 const Header = () => {
@@ -39,6 +40,7 @@ const Header = () => {
         )}
         <CartIcon />
       </nav>
+      <CartDropdown />
     </header>
   );
 };
