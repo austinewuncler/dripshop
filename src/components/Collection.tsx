@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { CartItemType } from '../features/cart/cart.types';
+import { ShopItemType } from '../features/shop/shop.types';
 import CollectionItem from './CollectionItem';
 
-type CollectionProps = { title: string; items: CartItemType[] };
+type CollectionProps = { title: string; items: ShopItemType[] };
 
 const Collection = ({ title, items }: CollectionProps) => (
   <section className="flex flex-col gap-6 collection">

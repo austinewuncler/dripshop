@@ -2,10 +2,10 @@ import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
 import { cartItemAdded } from '../features/cart/cart.slice';
-import { CartItemType } from '../features/cart/cart.types';
+import { ShopItemType } from '../features/shop/shop.types';
 import Button from './Button';
 
-type CollectionItemProps = { item: CartItemType };
+type CollectionItemProps = { item: ShopItemType };
 
 const CollectionItem = ({ item }: CollectionItemProps) => {
   const { imageUrl, name, price } = item;

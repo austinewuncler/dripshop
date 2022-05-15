@@ -3,6 +3,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../../app/store';
+import { ShopItemType } from '../shop/shop.types';
 import { CartItemType } from './cart.types';
 
 interface CartState {
@@ -19,7 +20,7 @@ const cartSlice = createSlice({
     toggled: (state) => {
       state.visible = !state.visible;
     },
-    cartItemAdded: (state, { payload }: PayloadAction<CartItemType>) => {
+    cartItemAdded: (state, { payload }: PayloadAction<ShopItemType>) => {
       const existingCartItem = state.items.find(
         (item) => item.id === payload.id
       );
