@@ -1,0 +1,15 @@
+.checkout-item {
+  min-height: 100px;
+  font-size: 20px;
+  border-bottom: 1px solid darkgray;
+
+  .image-container {
+    width: 23%;
+  }
+
+  .name,
+  .quantity,
+  .price {
+    width: 23%;
+  }
+}

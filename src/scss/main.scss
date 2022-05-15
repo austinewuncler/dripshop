@@ -2,9 +2,11 @@
 @use './base/typography';
 
 @use './layout/auth-page';
+@use './layout/checkout';
 
 @use './components/button';
 @use './components/cart';
+@use './components/checkout-item';
 @use './components/collection';
 @use './components/directory';
 @use './components/forms';

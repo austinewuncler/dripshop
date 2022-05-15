@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useAppSelector } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { toggleVisible } from '../features/cart/cart.slice';
 import Button from './Button';
 import CartItem from './CartItem';
 
 const CartDropdown = () => {
   const cartItems = useAppSelector((state) => state.cart.items);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <div className="absolute z-10 flex flex-col p-5 h-80 cart-dropdown w-60 top-20 right-10">
@@ -20,7 +22,14 @@ const CartDropdown = () => {
           </span>
         )}
       </div>
-      <Button onClick={() => navigate('/checkout')}>Go To Checkout</Button>
+      <Button
+        onClick={() => {
+          navigate('/checkout');
+          dispatch(toggleVisible());
+        }}
+      >
+        Go To Checkout
+      </Button>
     </div>
   );
 };
