@@ -11,6 +11,7 @@ import { setCurrentUser } from './features/user/user.slice';
 import { auth } from './firebase/auth';
 import saveUserProfile from './firebase/database';
 import AuthPage from './pages/AuthPage';
+import CheckoutPage from './pages/CheckoutPage';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 
@@ -42,6 +43,7 @@ const App = () => {
           path="/auth"
           element={currentUser ? <Navigate to="/" /> : <AuthPage />}
         />
+        <Route path="checkout" element={<CheckoutPage />} />
       </Routes>
     </div>
   );

@@ -3,6 +3,10 @@
 .cart-dropdown {
   background-color: $color-bg;
   border: 1px solid $color-main;
+
+  .empty-message {
+    font-size: 18px;
+  }
 }
 
 .cart-item {
