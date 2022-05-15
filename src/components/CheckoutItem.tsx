@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
 import {
-  cartItemAdded,
+  shopItemAddedToCart,
   cartItemCleared,
   cartItemRemoved,
 } from '../features/cart/cart.slice';
@@ -37,7 +37,7 @@ const CheckoutItem = ({ cartItem }: CheckoutItemProps) => {
           tabIndex={0}
           onKeyDown={() => {}}
           className="cursor-pointer"
-          onClick={() => dispatch(cartItemAdded(cartItem))}
+          onClick={() => dispatch(shopItemAddedToCart(cartItem))}
         >
           &#10095;
         </div>

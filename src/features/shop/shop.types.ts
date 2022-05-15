@@ -5,7 +5,7 @@ export type ShopItemType = {
   price: number;
 };
 
-export type CollectionType = {
+export type CategoryType = {
   id: number;
   title: string;
   routeName: string;

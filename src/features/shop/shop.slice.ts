@@ -2,14 +2,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { RootState } from '../../app/store';
-import { CollectionType } from './shop.types';
+import { CategoryType } from './shop.types';
 
 interface ShopState {
-  collections: CollectionType[];
+  categories: CategoryType[];
 }
 
 const initialState: ShopState = {
-  collections: [
+  categories: [
     {
       id: 1,
       title: 'Hats',
@@ -366,4 +366,4 @@ const initialState: ShopState = {
 const shopSlice = createSlice({ name: 'shop', initialState, reducers: {} });
 
 export const shopReducer = shopSlice.reducer;
-export const selectCollections = (state: RootState) => state.shop.collections;
+export const selectCategories = (state: RootState) => state.shop.categories;

@@ -20,7 +20,7 @@ const cartSlice = createSlice({
     toggled: (state) => {
       state.visible = !state.visible;
     },
-    cartItemAdded: (state, { payload }: PayloadAction<ShopItemType>) => {
+    shopItemAddedToCart: (state, { payload }: PayloadAction<ShopItemType>) => {
       const existingCartItem = state.items.find(
         (item) => item.id === payload.id
       );
@@ -48,8 +48,12 @@ const cartSlice = createSlice({
 });
 
 export const cartReducer = cartSlice.reducer;
-export const { toggled, cartItemAdded, cartItemCleared, cartItemRemoved } =
-  cartSlice.actions;
+export const {
+  toggled,
+  shopItemAddedToCart,
+  cartItemCleared,
+  cartItemRemoved,
+} = cartSlice.actions;
 export const selectVisible = (state: RootState) => state.cart.visible;
 export const selectCartItems = (state: RootState) => state.cart.items;
 export const selectCartItemsCount = (state: RootState) =>

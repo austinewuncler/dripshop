@@ -1,0 +1,39 @@
+.shop-item {
+  width: 22%;
+
+  .image {
+    height: 95%;
+  }
+
+  .button {
+    position: absolute;
+    top: 225px;
+    display: none;
+    width: 80%;
+    opacity: 0.7;
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.8;
+    }
+
+    .button {
+      display: flex;
+      opacity: 0.85;
+    }
+  }
+
+  .footer {
+    height: 5%;
+    font-size: 18px;
+
+    .name {
+      width: 90%;
+    }
+
+    .price {
+      width: 10%;
+    }
+  }
+}

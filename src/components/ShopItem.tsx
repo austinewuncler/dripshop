@@ -1,18 +1,18 @@
 import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
-import { cartItemAdded } from '../features/cart/cart.slice';
+import { shopItemAddedToCart } from '../features/cart/cart.slice';
 import { ShopItemType } from '../features/shop/shop.types';
 import Button from './Button';
 
-type CollectionItemProps = { item: ShopItemType };
+type ShopItemProps = { item: ShopItemType };
 
-const CollectionItem = ({ item }: CollectionItemProps) => {
+const ShopItem = ({ item }: ShopItemProps) => {
   const { imageUrl, name, price } = item;
   const dispatch = useAppDispatch();
 
   return (
-    <article className="relative flex flex-col items-center h-80 collection-item">
+    <article className="relative flex flex-col items-center h-80 shop-item">
       <div
         className="w-full mb-1 bg-center bg-cover image"
         style={{ backgroundImage: `url(${imageUrl})` }}
@@ -21,11 +21,11 @@ const CollectionItem = ({ item }: CollectionItemProps) => {
         <span className="mb-4 name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <Button inverted onClick={() => dispatch(cartItemAdded(item))}>
+      <Button inverted onClick={() => dispatch(shopItemAddedToCart(item))}>
         Add To Cart
       </Button>
     </article>
   );
 };
 
-export default CollectionItem;
+export default ShopItem;
