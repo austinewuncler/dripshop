@@ -16,7 +16,16 @@ const cartSlice = createSlice({
       state.visible = !state.visible;
     },
     addCartItem: (state, { payload }: PayloadAction<Item>) => {
-      state.items.push(payload);
+      const existingCartItem = state.items.find(
+        (item) => item.id === payload.id
+      );
+      if (existingCartItem)
+        state.items = state.items.map((item) =>
+          item.id === payload.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      else state.items.push({ ...payload, quantity: 1 });
     },
   },
 });

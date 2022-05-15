@@ -3,4 +3,5 @@ export type Item = {
   name: string;
   imageUrl: URL;
   price: number;
+  quantity: number;
 };
