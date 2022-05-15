@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { toggleVisible } from '../features/cart/cart.slice';
+import { selectCartItems, toggled } from '../features/cart/cart.slice';
 import Button from './Button';
 import CartItem from './CartItem';
 
 const CartDropdown = () => {
-  const cartItems = useAppSelector((state) => state.cart.items);
+  const cartItems = useAppSelector(selectCartItems);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -25,7 +25,7 @@ const CartDropdown = () => {
       <Button
         onClick={() => {
           navigate('/checkout');
-          dispatch(toggleVisible());
+          dispatch(toggled());
         }}
       >
         Go To Checkout

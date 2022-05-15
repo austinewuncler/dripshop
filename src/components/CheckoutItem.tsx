@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
 import {
-  addCartItem,
-  clearItemFromCart,
-  removeCartItem,
+  cardItemAdded,
+  cartItemCleared,
+  cartItemRemoved,
 } from '../features/cart/cart.slice';
 import { Item } from '../Item';
 
@@ -27,7 +27,7 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
           tabIndex={0}
           onKeyDown={() => {}}
           className="cursor-pointer"
-          onClick={() => dispatch(removeCartItem(item))}
+          onClick={() => dispatch(cartItemRemoved(item))}
         >
           &#10094;
         </div>
@@ -37,7 +37,7 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
           tabIndex={0}
           onKeyDown={() => {}}
           className="cursor-pointer"
-          onClick={() => dispatch(addCartItem(item))}
+          onClick={() => dispatch(cardItemAdded(item))}
         >
           &#10095;
         </div>
@@ -49,7 +49,7 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
         tabIndex={0}
         onKeyDown={() => {}}
         className="pl-3 cursor-pointer"
-        onClick={() => dispatch(clearItemFromCart(item))}
+        onClick={() => dispatch(cartItemCleared(item))}
       >
         &#10005;
       </span>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
-import { addCartItem } from '../features/cart/cart.slice';
+import { cardItemAdded } from '../features/cart/cart.slice';
 import { Item } from '../Item';
 import Button from './Button';
 
@@ -21,7 +21,7 @@ const CollectionItem = ({ item }: CollectionItemProps) => {
         <span className="mb-4 name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <Button inverted onClick={() => dispatch(addCartItem(item))}>
+      <Button inverted onClick={() => dispatch(cardItemAdded(item))}>
         Add To Cart
       </Button>
     </article>

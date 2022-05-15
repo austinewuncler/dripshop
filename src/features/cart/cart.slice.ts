@@ -1,6 +1,8 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { RootState } from '../../app/store';
 import { Item } from '../../Item';
 
 interface CartState {
@@ -12,10 +14,10 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState: { visible: false, items: [] } as CartState,
   reducers: {
-    toggleVisible: (state) => {
+    toggled: (state) => {
       state.visible = !state.visible;
     },
-    addCartItem: (state, { payload }: PayloadAction<Item>) => {
+    cardItemAdded: (state, { payload }: PayloadAction<Item>) => {
       const existingCartItem = state.items.find(
         (item) => item.id === payload.id
       );
@@ -27,10 +29,10 @@ const cartSlice = createSlice({
         );
       else state.items.push({ ...payload, quantity: 1 });
     },
-    clearItemFromCart: (state, { payload }: PayloadAction<Item>) => {
+    cartItemCleared: (state, { payload }: PayloadAction<Item>) => {
       state.items = state.items.filter((item) => item.id !== payload.id);
     },
-    removeCartItem: (state, { payload }: PayloadAction<Item>) => {
+    cartItemRemoved: (state, { payload }: PayloadAction<Item>) => {
       const existingCartItem = state.items.find(
         (item) => item.id === payload.id
       );
@@ -47,5 +49,12 @@ const cartSlice = createSlice({
 });
 
 export const cartReducer = cartSlice.reducer;
-export const { toggleVisible, addCartItem, clearItemFromCart, removeCartItem } =
+export const { toggled, cardItemAdded, cartItemCleared, cartItemRemoved } =
   cartSlice.actions;
+export const selectVisible = (state: RootState) => state.cart.visible;
+export const selectCartItems = (state: RootState) => state.cart.items;
+export const selectCartItemsCount = (state: RootState) =>
+  state.cart.items.reduce(
+    (previous, current) => previous + current.quantity,
+    0
+  );
