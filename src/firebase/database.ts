@@ -10,7 +10,7 @@ const saveUserProfile = async (user: User, additionalData?: any) => {
   const userSnapshot = await getDoc(userRef);
   if (!userSnapshot.exists()) {
     const { displayName, email } = user;
-    const createdAt = new Date();
+    const createdAt = new Date().toISOString();
     try {
       await setDoc(userRef, {
         displayName,
