@@ -3,9 +3,9 @@ import './scss/main.scss';
 import { onAuthStateChanged } from 'firebase/auth';
 import { onSnapshot } from 'firebase/firestore';
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { useAppDispatch } from './app/hooks';
+import { useAppDispatch, useAppSelector } from './app/hooks';
 import Header from './components/Header';
 import { setCurrentUser } from './features/user/user.slice';
 import { auth } from './firebase/auth';
@@ -16,6 +16,7 @@ import ShopPage from './pages/ShopPage';
 
 const App = () => {
   const dispatch = useAppDispatch();
+  const currentUser = useAppSelector((state) => state.user.currentUser);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -37,7 +38,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
-        <Route path="/auth" element={<AuthPage />} />
+        <Route
+          path="/auth"
+          element={currentUser ? <Navigate to="/" /> : <AuthPage />}
+        />
       </Routes>
     </div>
   );
