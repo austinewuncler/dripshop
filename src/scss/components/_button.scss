@@ -23,4 +23,16 @@
       border: none;
     }
   }
+
+  &.inverted {
+    color: $color-main;
+    background-color: $color-bg !important;
+    border: 1px solid $color-main;
+
+    &:hover {
+      color: $color-bg;
+      background-color: $color-main !important;
+      border: none;
+    }
+  }
 }

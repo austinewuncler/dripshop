@@ -9,13 +9,8 @@ const Collection = ({ title, items }: CollectionProps) => (
   <section className="flex flex-col gap-6 collection">
     <h1 className="uppercase title">{title}</h1>
     <div className="flex justify-between">
-      {items.slice(0, 4).map(({ id, name, price, imageUrl }) => (
-        <CollectionItem
-          key={id}
-          name={name}
-          price={price}
-          imageUrl={imageUrl}
-        />
+      {items.slice(0, 4).map((item) => (
+        <CollectionItem key={item.id} item={item} />
       ))}
     </div>
   </section>
