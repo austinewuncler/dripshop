@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import Logo from '../assets/crown.svg';
 import { auth } from '../firebase/auth';
+import CartIcon from './CartIcon';
 
 const Header = () => {
   const currentUser = useAppSelector((state) => state.user.currentUser);
@@ -36,6 +37,7 @@ const Header = () => {
             Sign In
           </Link>
         )}
+        <CartIcon />
       </nav>
     </header>
   );
