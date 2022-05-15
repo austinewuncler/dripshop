@@ -1,11 +1,13 @@
 import React from 'react';
 import { AiOutlineShopping } from 'react-icons/ai';
 
-import { useAppDispatch } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { toggleVisible } from '../features/cart/cart.slice';
 
 const CartIcon = () => {
   const dispatch = useAppDispatch();
+  const items = useAppSelector((state) => state.cart.items);
+  const itemsCount = items.reduce((prev, curr) => prev + curr.quantity, 0);
 
   return (
     <div
@@ -16,7 +18,7 @@ const CartIcon = () => {
       onKeyDown={() => {}}
     >
       <AiOutlineShopping className="w-full h-full font-thin" />
-      <div className="absolute bottom-1.5 font-bold">0</div>
+      <div className="absolute bottom-1.5 font-bold">{itemsCount}</div>
     </div>
   );
 };
