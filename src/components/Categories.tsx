@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { useAppSelector } from '../app/hooks';
-import { selectCategories } from '../features/shop/shop.slice';
+import { selectAllCategories } from '../features/shop/shop.slice';
 import Category from './Category';
 
 const Categories = () => {
-  const categories = useAppSelector(selectCategories);
+  const categories = useAppSelector(selectAllCategories);
+  console.log(categories);
 
   return (
     <div className="flex flex-col gap-6">

@@ -8,8 +8,8 @@ const Directory = () => {
   const directoryItems = useAppSelector(selectDirectoryItems);
   return (
     <section className="flex flex-wrap justify-between w-full gap-4">
-      {directoryItems.map(({ id, imageUrl, title, size }) => (
-        <DirectoryItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      {directoryItems.map((directory) => (
+        <DirectoryItem key={directory.id} directory={directory} />
       ))}
     </section>
   );
