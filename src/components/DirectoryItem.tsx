@@ -1,6 +1,6 @@
 import React from 'react';
 
-type DirectoryItemProps = { imageUrl: URL; size?: string; title: string };
+type DirectoryItemProps = { imageUrl: string; size?: string; title: string };
 
 const DirectoryItem = ({ imageUrl, size, title }: DirectoryItemProps) => (
   <article

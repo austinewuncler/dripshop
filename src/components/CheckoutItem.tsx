@@ -2,16 +2,16 @@ import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
 import {
-  cardItemAdded,
+  cartItemAdded,
   cartItemCleared,
   cartItemRemoved,
 } from '../features/cart/cart.slice';
-import { Item } from '../Item';
+import { CartItemType } from '../features/cart/cart.types';
 
-type CheckoutItemProps = { item: Item };
+type CheckoutItemProps = { cartItem: CartItemType };
 
-const CheckoutItem = ({ item }: CheckoutItemProps) => {
-  const { imageUrl, name, quantity, price } = item;
+const CheckoutItem = ({ cartItem }: CheckoutItemProps) => {
+  const { id, imageUrl, name, quantity, price } = cartItem;
   const dispatch = useAppDispatch();
 
   return (
@@ -27,7 +27,7 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
           tabIndex={0}
           onKeyDown={() => {}}
           className="cursor-pointer"
-          onClick={() => dispatch(cartItemRemoved(item))}
+          onClick={() => dispatch(cartItemRemoved(id))}
         >
           &#10094;
         </div>
@@ -37,7 +37,7 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
           tabIndex={0}
           onKeyDown={() => {}}
           className="cursor-pointer"
-          onClick={() => dispatch(cardItemAdded(item))}
+          onClick={() => dispatch(cartItemAdded(cartItem))}
         >
           &#10095;
         </div>
@@ -49,7 +49,7 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
         tabIndex={0}
         onKeyDown={() => {}}
         className="pl-3 cursor-pointer"
-        onClick={() => dispatch(cartItemCleared(item))}
+        onClick={() => dispatch(cartItemCleared(id))}
       >
         &#10005;
       </span>

@@ -2,10 +2,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { cartReducer } from '../features/cart/cart.slice';
+import { directoryReducer } from '../features/directory/directory.slice';
 import { userReducer } from '../features/user/user.slice';
 
 export const store = configureStore({
-  reducer: { user: userReducer, cart: cartReducer },
+  reducer: {
+    user: userReducer,
+    cart: cartReducer,
+    directory: directoryReducer,
+  },
 });
 
 // TODO: Find a solution for persistence

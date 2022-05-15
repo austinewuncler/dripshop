@@ -1,7 +1,7 @@
-export type Item = {
+export type CartItemType = {
   id: number;
   name: string;
-  imageUrl: URL;
+  imageUrl: string;
   price: number;
   quantity: number;
 };

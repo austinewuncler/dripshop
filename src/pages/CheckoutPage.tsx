@@ -20,7 +20,7 @@ const CheckoutPage = () => {
         <div className="capitalize header-block">Remove</div>
       </div>
       {cartItems.map((item) => (
-        <CheckoutItem key={item.id} item={item} />
+        <CheckoutItem key={item.id} cartItem={item} />
       ))}
       <div className="ml-auto uppercase total mt-7">Total: Ksh. {total}</div>
     </div>

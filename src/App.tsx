@@ -7,7 +7,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import Header from './components/Header';
-import { setCurrentUser } from './features/user/user.slice';
+import { currentUserChanged } from './features/user/user.slice';
 import { auth } from './firebase/auth';
 import saveUserProfile from './firebase/database';
 import AuthPage from './pages/AuthPage';
@@ -24,10 +24,10 @@ const App = () => {
       if (user) {
         const userRef = await saveUserProfile(user);
         onSnapshot(userRef, (snapshot) => {
-          dispatch(setCurrentUser({ id: snapshot.id, ...snapshot.data() }));
+          dispatch(currentUserChanged({ id: snapshot.id, ...snapshot.data() }));
         });
       }
-      dispatch(setCurrentUser(null));
+      dispatch(currentUserChanged(null));
     });
 
     return () => unsubscribe();

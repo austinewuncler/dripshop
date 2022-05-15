@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
-import { cardItemAdded } from '../features/cart/cart.slice';
-import { Item } from '../Item';
+import { cartItemAdded } from '../features/cart/cart.slice';
+import { CartItemType } from '../features/cart/cart.types';
 import Button from './Button';
 
-type CollectionItemProps = { item: Item };
+type CollectionItemProps = { item: CartItemType };
 
 const CollectionItem = ({ item }: CollectionItemProps) => {
   const { imageUrl, name, price } = item;
@@ -21,7 +21,7 @@ const CollectionItem = ({ item }: CollectionItemProps) => {
         <span className="mb-4 name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <Button inverted onClick={() => dispatch(cardItemAdded(item))}>
+      <Button inverted onClick={() => dispatch(cartItemAdded(item))}>
         Add To Cart
       </Button>
     </article>

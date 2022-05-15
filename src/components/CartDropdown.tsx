@@ -15,7 +15,7 @@ const CartDropdown = () => {
     <div className="absolute z-10 flex flex-col p-5 h-80 cart-dropdown w-60 top-20 right-10">
       <div className="flex flex-col overflow-scroll h-60">
         {cartItems.length ? (
-          cartItems.map((item) => <CartItem key={item.id} item={item} />)
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
         ) : (
           <span className="mx-auto my-12 empty-message">
             Your cart is empty

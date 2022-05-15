@@ -10,7 +10,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/brown-brim.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 25,
       },
       {
@@ -19,7 +19,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/blue-beanie.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 18,
       },
       {
@@ -28,7 +28,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/brown-cowboy.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 35,
       },
       {
@@ -37,7 +37,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/grey-brim.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 25,
       },
       {
@@ -46,7 +46,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/green-beanie.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 18,
       },
       {
@@ -55,7 +55,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/palm-tree-cap.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 14,
       },
       {
@@ -64,7 +64,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/red-beanie.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 18,
       },
       {
@@ -73,7 +73,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/wolf-cap.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 14,
       },
       {
@@ -82,7 +82,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/hats/blue-snapback.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 16,
       },
     ],
@@ -98,7 +98,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/adidas-nmd.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 220,
       },
       {
@@ -107,7 +107,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/yeezy.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 280,
       },
       {
@@ -116,7 +116,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/black-converse.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 110,
       },
       {
@@ -125,7 +125,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/white-nike-high-tops.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 160,
       },
       {
@@ -134,7 +134,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/nikes-red.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 160,
       },
       {
@@ -143,7 +143,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/nike-brown.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 160,
       },
       {
@@ -152,7 +152,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/nike-funky.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 190,
       },
       {
@@ -161,7 +161,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/sneakers/timberlands.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 200,
       },
     ],
@@ -177,7 +177,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/jackets/black-shearling.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 125,
       },
       {
@@ -186,7 +186,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/jackets/blue-jean-jacket.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 90,
       },
       {
@@ -195,7 +195,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/jackets/grey-jean-jacket.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 90,
       },
       {
@@ -204,7 +204,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/jackets/brown-shearling.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 165,
       },
       {
@@ -213,7 +213,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/jackets/brown-trench.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 185,
       },
     ],
@@ -229,7 +229,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/blue-tank.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 25,
       },
       {
@@ -238,7 +238,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/floral-blouse.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 20,
       },
       {
@@ -247,7 +247,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/floral-skirt.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 80,
       },
       {
@@ -256,7 +256,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/red-polka-dot-dress.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 80,
       },
       {
@@ -265,7 +265,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/striped-sweater.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 45,
       },
       {
@@ -274,7 +274,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/yellow-track-suit.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 135,
       },
       {
@@ -283,7 +283,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/womens/white-vest.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 20,
       },
     ],
@@ -299,7 +299,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/mens/camo-vest.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 325,
       },
       {
@@ -308,7 +308,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/mens/floral-shirt.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 20,
       },
       {
@@ -317,7 +317,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/mens/long-sleeve.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 25,
       },
       {
@@ -326,7 +326,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/mens/pink-shirt.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 25,
       },
       {
@@ -335,7 +335,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/mens/roll-up-jean-shirt.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 40,
       },
       {
@@ -344,7 +344,7 @@ const SHOP_DATA = [
         imageUrl: new URL(
           './assets/images/shop-img/mens/polka-dot-shirt.png',
           import.meta.url
-        ),
+        ).toString(),
         price: 25,
       },
     ],
