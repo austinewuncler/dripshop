@@ -1,7 +1,11 @@
 import React from 'react';
 
 import { useAppDispatch } from '../app/hooks';
-import { clearItemFromCart } from '../features/cart/cart.slice';
+import {
+  addCartItem,
+  clearItemFromCart,
+  removeCartItem,
+} from '../features/cart/cart.slice';
 import { Item } from '../Item';
 
 type CheckoutItemProps = { item: Item };
@@ -16,8 +20,30 @@ const CheckoutItem = ({ item }: CheckoutItemProps) => {
         <img className="w-full h-full" src={imageUrl.toString()} alt={name} />
       </div>
       <span className="name">{name}</span>
-      <span className="pl-5 quantity">{quantity}</span>
+
+      <span className="flex pl-5 quantity">
+        <div
+          role="button"
+          tabIndex={0}
+          onKeyDown={() => {}}
+          className="cursor-pointer"
+          onClick={() => dispatch(removeCartItem(item))}
+        >
+          &#10094;
+        </div>
+        <span className="my-0 mx-2.5">{quantity}</span>
+        <div
+          role="button"
+          tabIndex={0}
+          onKeyDown={() => {}}
+          className="cursor-pointer"
+          onClick={() => dispatch(addCartItem(item))}
+        >
+          &#10095;
+        </div>
+      </span>
       <span className="price">{price}</span>
+
       <span
         role="button"
         tabIndex={0}
