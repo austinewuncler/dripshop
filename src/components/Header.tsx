@@ -10,6 +10,7 @@ import CartIcon from './CartIcon';
 
 const Header = () => {
   const currentUser = useAppSelector((state) => state.user.currentUser);
+  const isCartVisible = useAppSelector((state) => state.cart.visible);
 
   return (
     <header className="flex items-center justify-between w-full h-16">
@@ -40,7 +41,7 @@ const Header = () => {
         )}
         <CartIcon />
       </nav>
-      <CartDropdown />
+      {isCartVisible ? <CartDropdown /> : null}
     </header>
   );
 };
